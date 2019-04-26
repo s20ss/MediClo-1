@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <body class="align">
+
+  <div class="site__container">
+
+    <div class="grid__container">
+
+      <form action="signup.php" method="post" class="form form--login">
+
+        <div class="form__field">
+          <label class="fontawesome-user" for="login__username"><span class="hidden">Username</span></label>
+          <input id="login__username" type="text" class="form__input" placeholder="Username" name="name" required>
+        </div>
+
+        <div class="form__field">
+          <label class="fontawesome-envelope" for="login__email"><span class="hidden">Email</span></label>
+          <input id="login__email" type="text" class="form__input" placeholder="Email" name="email" required>
+        </div>
+
+        <div class="form__field">
+          <label class="fontawesome-lock" for="login__password"><span class="hidden">Password</span></label>
+          <input id="login__password" type="password" class="form__input" placeholder="Password" name="p1" required>
+        </div>
+
+         <div class="form__field">
+          <label class="fontawesome-lock" for="retype__password"><span class="hidden">Retype Password</span></label>
+          <input id="retype__password" type="password" class="form__input" placeholder="Retype Password" name="cp1" required>
+        </div>
+
+           <div class="form__field">
+          <label class="fontawesome-phone" for="Mobile_number"><span class="hidden">Mobile number</span></label>
+          <input id="Mobile_number" type="text" class="form__input" placeholder="Mobile number" name="phno" required>
+        </div>
+        <div class="form__field">
+      <div class="form-group">
+  <select class="form__field" id="selbox" placeholder="Saving plan" name="savplan">
+    <option>Saving Plan</option>
+    <option value="intensive" >Intensive</option>
+    <option value="moderate" >Moderate</option>
+    <option value="easy" >Easy</option>
+  </select>
+</div>
+</div>
+
+
+        <div class="form__field">
+          <input type="submit" value="Sign Up">
+        </div>
+
+      </form>
+
+      <p class="text--center">Already a member? <a href="LOGIN.html">Login now</a> <span class="fontawesome-arrow-right"></span></p>
+
+    </div>
+
+  </div>
+
+</body>
+    
+    
+    
+    
+    
+  </body>
+</html>

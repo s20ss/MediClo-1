@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Radar Chart</title>
+    <script src="Chart.bundle.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div style="width:100%" style="
+    color:#ffffff;">
+        <canvas id="canvas"></canvas>
+    </div>
+   
+    <script>
+    var randomScalingFactor = function() {
+        return Math.round(Math.random() * 100);
+    };
+    var randomColorFactor = function() {
+        return Math.round(Math.random() * 255);
+    };
+    var randomColor = function(opacity) {
+        return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+    };
+
+    var config = {
+        type: 'radar',
+        data: {
+           labels: [
+                "Shopping",
+                "Food",
+                "Household",
+                "Electronics",
+                "Entertainment",
+                "Travel",
+                "Insurance",
+                "Accomodation",
+                "Bank and Finances"            ],
+            datasets: [{
+                label: "Expenditure",
+                borderColor: 'rgb(255, 0, 0,0.6)',
+                backgroundColor: "rgba(220,0,0,0.6)",
+                pointBackgroundColor: "rgba(220,220,220,1)",
+                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+            },  {
+                label: "As per Saving Plan",
+                backgroundColor: "rgba(0,220,0,0.4)",
+                pointBackgroundColor: "rgba(151,187,205,1)",
+                pointHoverBackgroundColor: "#fff",
+                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+            },]
+        },
+        options: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Chart.js Radar Chart'
+            },
+            scale: {
+              reverse: false,
+              gridLines: {
+                color: ['black', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+              },
+              ticks: {
+                beginAtZero: true
+              }
+            }
+        }
+    };
+
+    window.onload = function() {
+        window.myRadar = new Chart(document.getElementById("canvas"), config);
+    };
+
+    </script>
+</body>
+
+</html>
